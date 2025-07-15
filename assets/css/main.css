@@ -720,10 +720,11 @@ section,
 }
 
 .hero .content .lead {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
+
 
 .hero .cta-buttons {
   display: flex;
