@@ -324,7 +324,7 @@ Feel free to drop me a message!</p>
         <div class="card-body p-4 p-lg-5">
 
             <!-- Geef het formulier een id, bijvoorbeeld "contact-form" -->
-            <form id="contact-form" name="contact" data-netlify="true">
+            <form id="contact-form" name="contact" netlify data-netlify="true">
                 <input type="hidden" name="form-name" value="contact">
                 <div class="row gy-4">
 
@@ -357,7 +357,7 @@ Feel free to drop me a message!</p>
             </div>
             <!-- Optioneel: een foutmelding -->
             <div id="form-error" class="text-center mt-4" style="display: none; color: red; font-weight: 500;">
-                Oops! Something went wrong.
+                Oops! Something went wrong. Try again!
             </div>
 
         </div>
@@ -414,40 +414,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const successMessage = document.getElementById('form-success');
     const errorMessage = document.getElementById('form-error');
 
-    contactForm.addEventListener('submit', function (e) {
-        // Voorkom dat de pagina opnieuw laadt
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-        // Maak een FormData-object van het formulier
-        const formData = new FormData(contactForm);
-        
-        // Stuur de data naar de server
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(formData).toString()
         })
-        .then(response => {
-            if (response.ok) {
-                // Toon het succesbericht
-                successMessage.style.display = 'block';
-                // Verberg de foutmelding voor het geval die zichtbaar was
-                errorMessage.style.display = 'none'; 
-                // Maak het formulier leeg
-                contactForm.reset(); 
-            } else {
-                // Gooi een error als de server een foutstatus teruggeeft
-                throw new Error('Form submission failed');
-            }
+        .then(() => {
+            // Dit wordt uitgevoerd als de server een 'ok' response geeft.
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+            contactForm.reset();
         })
-        .catch(error => {
-            // Toon de foutmelding
+        .catch((error) => {
+            // Dit wordt uitgevoerd bij een netwerkfout of als de server een error status teruggeeft.
             errorMessage.style.display = 'block';
-            // Verberg het succesbericht
-            successMessage.style.display = 'none'; 
-            console.error('Error:', error);
+            successMessage.style.display = 'none';
+            console.error(error);
         });
-    });
+    };
+
+    contactForm.addEventListener('submit', handleSubmit);
 });
 </script>
 
