@@ -323,7 +323,7 @@ Feel free to drop me a message!</p>
             <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
               <div class="card-body p-4 p-lg-5">
 
-                <form name="contact" method="POST" data-netlify="true" netlify>
+                <form name="contact" method="POST" data-netlify="true" netlify action="?success=true">
                 <input type="hidden" name="form-name" value="contact">
                   <div class="row gy-4">
 
@@ -344,15 +344,15 @@ Feel free to drop me a message!</p>
                     </div>
 
                     <div class="col-12 text-center">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your message has been sent. Thank you!</div>
 
                       <button type="submit" class="btn btn-submit w-100">Submit Message</button>
                     </div>
 
                   </div>
                 </form>
+                <div id="form-success" class="text-center mt-4" style="display: none; color: green; font-weight: 500;">
+  Your message has been sent. Thank you!
+</div>
 
               </div>
             </div>
@@ -401,6 +401,21 @@ Feel free to drop me a message!</p>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      const successMessage = document.getElementById('form-success');
+      if (successMessage) {
+        successMessage.style.display = 'block';
+      }
+      // Remove the query string from the URL without reloading
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  });
+</script>
+
 
 </body>
 
