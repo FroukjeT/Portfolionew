@@ -319,44 +319,50 @@ Feel free to drop me a message!</p>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
-              <div class="card-body p-4 p-lg-5">
+          <d<div class="col-lg-6">
+    <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-body p-4 p-lg-5">
 
-                <form name="contact" method="POST" data-netlify="true" netlify action="/index.html?success=true">
+            <!-- Geef het formulier een id, bijvoorbeeld "contact-form" -->
+            <form id="contact-form" name="contact" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact">
-                  <div class="row gy-4">
+                <div class="row gy-4">
 
                     <div class="col-12">
-                      <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                    </div>
-
-                    <div class="col-12 ">
-                      <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
                     </div>
 
                     <div class="col-12">
-                      <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
                     </div>
 
                     <div class="col-12">
-                      <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+
+                    <div class="col-12">
+                        <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
                     </div>
 
                     <div class="col-12 text-center">
-
-                      <button type="submit" class="btn btn-submit w-100">Submit Message</button>
+                        <button type="submit" class="btn btn-submit w-100">Submit Message</button>
                     </div>
 
-                  </div>
-                </form>
-                <div id="form-success" class="text-center mt-4" style="display: none; color: green; font-weight: 500;">
-  Your message has been sent. Thank you!
-</div>
+                </div>
+            </form>
 
-              </div>
+            <!-- Het succesbericht, standaard verborgen -->
+            <div id="form-success" class="text-center mt-4" style="display: none; color: green; font-weight: 500;">
+                Your message has been sent. Thank you!
             </div>
-          </div>
+            <!-- Optioneel: een foutmelding -->
+            <div id="form-error" class="text-center mt-4" style="display: none; color: red; font-weight: 500;">
+                Oops! Something went wrong.
+            </div>
+
+        </div>
+    </div>
+</div>
 
         </div>
 
@@ -402,18 +408,47 @@ Feel free to drop me a message!</p>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-      const successMessage = document.getElementById('form-success');
-      if (successMessage) {
-        successMessage.style.display = 'block';
-      }
-      // Remove the query string from the URL without reloading
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  });
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+    const errorMessage = document.getElementById('form-error');
+
+    contactForm.addEventListener('submit', function (e) {
+        // Voorkom dat de pagina opnieuw laadt
+        e.preventDefault();
+
+        // Maak een FormData-object van het formulier
+        const formData = new FormData(contactForm);
+        
+        // Stuur de data naar de server
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(response => {
+            if (response.ok) {
+                // Toon het succesbericht
+                successMessage.style.display = 'block';
+                // Verberg de foutmelding voor het geval die zichtbaar was
+                errorMessage.style.display = 'none'; 
+                // Maak het formulier leeg
+                contactForm.reset(); 
+            } else {
+                // Gooi een error als de server een foutstatus teruggeeft
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            // Toon de foutmelding
+            errorMessage.style.display = 'block';
+            // Verberg het succesbericht
+            successMessage.style.display = 'none'; 
+            console.error('Error:', error);
+        });
+    });
+});
 </script>
 
 
