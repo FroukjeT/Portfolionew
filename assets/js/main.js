@@ -7,12 +7,10 @@
 */
 
 function goToPage(event) {
-  // If click target is inside the eye icon link, do nothing (allow preview)
-  if (event.target.closest('.glightbox')) {
-    return; // Don't redirect, user clicked the eye icon
+  const link = event.currentTarget.getAttribute('data-link');
+  if (link) {
+    window.location.href = link;
   }
-  // Otherwise redirect to the portfolio page
-  window.location.href = 'portfolio1.html';
 }
 
 (function() {
