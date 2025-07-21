@@ -1139,6 +1139,8 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
+
+
 .portfolio .portfolio-filters-container {
   margin-bottom: 40px;
 }
@@ -1176,6 +1178,8 @@ section,
 }
 
 .portfolio .portfolio-card {
+  width: 90%; 
+  margin: 0 auto;  
   background-color: var(--surface-color);
   border-radius: 15px;
   overflow: hidden;
