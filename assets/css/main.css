@@ -1322,7 +1322,7 @@ section,
 }
 
 .testimonials .testimonial-item {
-  background-color: var(--surface-color);
+  background-color: white;
   padding: 40px;
   border-radius: 20px;
 }
@@ -1365,7 +1365,8 @@ section,
 
 .testimonials .testimonial-item .profile .profile-info span {
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color) 70%, transparent);
+  /* color: color-mix(in srgb, var(--default-color) 70%, transparent); */
+  
 }
 
 .testimonials .testimonial-item .featured-img-wrapper {
@@ -1399,7 +1400,7 @@ section,
   margin: 0;
   width: 44px;
   height: 44px;
-  background-color: var(--surface-color);
+  /* background-color: var(--surface-color); */
   border-radius: 50%;
   border: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
   transition: 0.3s;
@@ -1408,18 +1409,18 @@ section,
 .testimonials .swiper-button-prev::after,
 .testimonials .swiper-button-next::after {
   font-size: 20px;
-  color: var(--default-color);
+  /* color: var(--default-color); */
 }
 
 .testimonials .swiper-button-prev:hover,
 .testimonials .swiper-button-next:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  /* background-color: var(--accent-color);
+  border-color: var(--accent-color); */
 }
 
 .testimonials .swiper-button-prev:hover::after,
 .testimonials .swiper-button-next:hover::after {
-  color: var(--contrast-color);
+  /* color: var(--contrast-color); */
 }
 
 /*--------------------------------------------------------------
