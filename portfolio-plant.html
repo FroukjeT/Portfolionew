@@ -73,160 +73,143 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html#portfolio"><i class="bi bi-arrow-left"></i> Home</a></li>
-            <li class="breadcrumb-item active current">Inclusive Sports Instruction</li>
+            <li class="breadcrumb-item active current">Smart Vertical Garden</li>
           </ol>
         </nav>
       </div>
 
       <div class="title-wrapper">
 
-        <h1>Inclusive Sports Instruction</h1>
-        <p>Exploring the Use of Alternative Media to Facilitate the Instruction of Motor Movement for Special Athletes.
+        <h1>Smart Vertical Garden</h1>
+        <p>Urban residents lack the space, time, and knowledge to grow their own food, leading to disconnection from food sources and reliance on unsustainable supply chains - <i> 2019 (10 weeks)</i>
         </p>
       </div>
     </div><!-- End Page Title -->
 
     <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+<section id="portfolio-details" class="portfolio-details section">
 
-      <div class="container" data-aos="fade-up">
+  <div class="container" data-aos="fade-up">
 
-        <div class="row gy-4 g-lg-5">
-          <div class="col-lg-6">
-            <div class="d-flex justify-content-center mb-4">
-              <video autoplay controls class="small-video" style="max-width: 550px; width: 100%;">
-                <source src="assets/img/garden/video.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+    <div class="row gy-4 g-lg-5">
+    
+      <!-- Left Column: Media (Videos and Images) -->
+      <div class="col-lg-6">
+        <div class="d-flex justify-content-center mb-4">
+          <video autoplay controls loop muted class="small-video" style="max-width: 550px; width: 100%;">
+            <source src="assets/img/garden/video.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <img src="assets/img/garden/1.png" class="img-fluid mb-4" alt="Smart Vertical Garden Prototype">
+        <img src="assets/img/garden/2.png" class="img-fluid mb-4" alt="3D Model of Smart Garden">
+        <img src="assets/img/garden/3.JPG" class="img-fluid mb-4" alt="Close-up of the garden mechanism">
+        <img src="assets/img/garden/4.jpeg" class="img-fluid mb-4" alt="Garden prototype from another angle">
+        <img src="assets/img/garden/6.png" class="img-fluid mb-4" alt="Software simulation of sun tracking">
+      </div>
+
+      <!-- Right Column: Project Description -->
+      <div class="col-lg-6">
+
+        <div class="position-sticky" style="top: 40px">
+          <div class="portfolio-description">
+            <h2>Automated Urban Gardening – a Smart Environments Project</h2>
+
+            <h5>Challenge</h5>
+            <p>
+              With the global population rising and urban density increasing, the space available for traditional agriculture is shrinking. This creates a dual problem: the food supply chain becomes longer, increasing CO2 emissions from transportation, and urban residents become disconnected from their food source. Many people living in apartments or homes with small gardens are interested in growing their own food but are often discouraged by lack of space, time, or horticultural knowledge.
+            </p>
+
+            <div class="testimonial-item">
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>I'd love to grow my own herbs, but I live in an apartment with a tiny balcony, and honestly, I have no idea how to keep a plant alive for more than a few weeks.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
             </div>
-            <img src="assets/img/garden/1.png" class="img-fluid mb-4" alt="">
-            <img src="assets/img/garden/2.png" class="img-fluid mb-4" alt="">
-            <img src="assets/img/garden/3.JPG" class="img-fluid mb-4" alt="">
-            <img src="assets/img/garden/4.jpeg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/garden/6.png" class="img-fluid mb-4" alt="">
 
+            <h5>Solution</h5>
+            <p>
+              The Smart Vertical Garden is a consumer-focused, automated system designed to make home gardening effortless and efficient, even in small urban spaces.
+            </p>
+            <p>The result is a smart, self-regulating garden that:</p>
+            <ul>
+              <li><strong>Follows the sun:</strong> Using an automated rotation system, the garden turns throughout the day to ensure plants receive maximum sunlight, with a predicted 25-35% increase in sun exposure.</li>
+              <li><strong>Waters itself:</strong> Integrated humidity sensors monitor moisture levels and activate a pump to water the plants precisely when needed.</li>
+              <li><strong>Is built for the user:</strong> The design features easily replaceable plant sockets and a sturdy base that houses both a water reservoir and the required hardware.</li>
+            </ul>
+            <p>
+              This concept was brought to life through a functional prototype, featuring laser-cut MDF gears and an Arduino-controlled motor, which successfully demonstrated the core automated features.
+            </p>
+            <br>
+
+            <h5>My Role</h5>
+            <p>
+              This project was a collaborative effort within the "Smart Environments" course. As a team, we followed a full design and development process. My responsibilities included:
+            </p>
+            <ul>
+              <li>Conducting literature reviews and problem analysis to define project scope.</li>
+              <li>Ideating and specifying the core features of the smart garden.</li>
+              <li>Designing and <b>programming the construction of the physical, Arduino-powered </b>prototype (communication via 'Processing').</li>
+            </ul>
+            <br>
+
+            <h5>The Process:</h5>
+            <h6>1. Research & Discovery</h6>
+            <p>
+              Through a comprehensive literature review and problem analysis, our team investigated existing smart agriculture technologies and identified key challenges in the current food system, confirming that a small-scale, automated solution could address multiple issues simultaneously.
+            </p>
+
+            <h6>2. Ideation & Specification</h6>
+            <p>
+              We brainstormed several potential solutions before focusing on a vertical garden for its feasibility and direct consumer impact. We defined the system's core requirements: it had to be automated, compact, and user-friendly for beginners.
+            </p>
+
+            <h6>3. Prototyping</h6>
+            <p>
+              We developed two parallel prototypes:
+            </p>
+            <ul>
+              <li><strong>Software Prototype</strong> – Using Processing, we built a simulation to validate the algorithm for the optimal sun-tracking rotation.</li>
+              <li><strong>Physical Prototype</strong> – We constructed a functional model using laser-cut gears, a PVC support structure, and an Arduino to demonstrate the mechanical feasibility.</li>
+            </ul>
+
+            <h6>4. Evaluation</h6>
+            <p>
+              While a formal usability study was not conducted due to time constraints, we evaluated the prototype based on its functional success and existing research. The prototype successfully demonstrated the intended automated rotation, and its potential is supported by data on similar single-axis trackers (predicting a 25-35% increase in sunlight capture).
+            </p>
+            <br>
+
+            <h5>Outcome & reflection</h5>
+            <p>
+              The final prototype successfully met our primary goal of creating a functional, automated vertical garden, demonstrating that the core concept was viable.
+            </p>
+            <ul>
+              <li><strong>Predicted Efficiency:</strong> Based on existing data, the sun-tracking feature is projected to increase sunlight capture by <strong>25-35%</strong>.</li>
+              <li><strong>Functional Success:</strong> The physical prototype successfully demonstrated the autonomous rotation powered by an Arduino and integrated sensors.</li>
+            </ul>
+            <p>
+              The key reflection was the importance of early physical prototyping to identify and solve unexpected mechanical challenges. The project confirmed that smart, user-centered design can make sustainable living more accessible and serves as a meaningful step toward healthier, more localized food systems.
+            </p>
           </div>
 
-          <div class="col-lg-6">
-
-            <div class="position-sticky" style="top: 40px">
-              <div class="portfolio-description">
-                <h2>An athletics case study – Bachelor Thesis</h2>
-                <!-- <div class="portfolio-info mt-5">
-                <h3>Problem:</h3>
-              </div> -->
-
-                <h5>Challenge</h5>
-                <p>
-                  While interactive technologies are increasingly present in mainstream sports training, athletes with
-                  intellectual disabilities are often overlooked in their design. These athletes face unique challenges
-                  such as language comprehension difficulties, memory deficits, short attention spans, impulsive
-                  behavior, and/or hearing impairments. Traditional verbal instruction methods often fail to engage them
-                  or effectively communicate motor movement exercises, which limits their participation and progress.
-                </p>
-
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>“It is difficult for people with Autism Spectrum Disorder to get instruction during physical activity which relies on verbal communication and social interaction.”</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <div>
-                    <img src="assets/img/person/person-f-5.webp" class="testimonial-img" alt="">
-                    <h3>Bittner, et al.</h3>
-                    <h4>Physiology & Behavior, vol. 177</h4>
-                  </div>
-                </div>
-                <h5>Solution</h5>
-                <p>
-                  This thesis explores how alternative media can enhance instructional communication for special
-                  athletes. The outcome is a prototype: an <br>add-on instruction system for athletics equipment </br>
-                  that uses non-verbal cues to guide athletes with intellectual disabilities through exercises. The
-                  system was designed to improve clarity, reduce reliance on verbal explanations, and boost engagement.
-                </p>
-                <br>
-
-                <h5>My role & tools</h5>
-                <p>
-                  This project followed the <b>Creative Technology Design Process</b>, encompassing ideation,
-                  specification, realization, and evaluation. I was responsible for:
-                </p>
-                <ul>
-                  <li>Conducting literature research and user interviews</li>
-                  <li>Observing training sessions to identify key user needs</li>
-                  <li>Designing and prototyping the system</li>
-                  <li>Running user tests with the target group</li>
-                  <li>Analyzing results and reflecting on improvements</li>
-                </ul>
-                <p>Tools used included qualitative research methods, rapid prototyping techniques, and basic interaction
-                  design tools.</p>
-                <br>
-
-                <h5>The process:</h5>
-                <h6>1. Research & Discovery</h6>
-                <p>
-                  Literature reviews, trainer interviews, and field observations highlighted key cognitive and sensory
-                  challenges faced by the athletes.
-                </p>
-
-                <h6>2. Ideation & Specification</h6>
-                <p>
-                  Identified non-verbal communication strategies and translated them into functional and non-functional
-                  system requirements.
-                </p>
-
-                <h6>3. Prototyping</h6>
-                <p>
-                  Developed an add-on instructional system using visual and/or auditory cues to support equipment-based
-                  training.
-                </p>
-
-                <h6>4. Evaluation</h6>
-                <p>
-                  Conducted three rounds of user testing with children. The prototype led to:
-                </p>
-                <ul>
-                  <li>Fewer errors during exercises</li>
-                  <li>Faster task completion</li>
-                  <li>Reduced need for verbal instruction</li>
-                  <li>Higher overall engagement</li>
-                </ul>
-                <p>
-                  Feedback from both athletes and the trainer was very positive, indicating the system's potential.
-                </p>
-
-                <br>
-                <h5>Outcome & reflection</h5>
-                <p>
-                  The project achieved its goal of improving understanding and engagement during training sessions. It
-                  demonstrates the promise of inclusive interactive design in sports contexts. While the results are
-                  encouraging, further testing with a broader participant base and varied equipment is recommended to
-                  validate generalizability.
-                </p>
-
-
-
-              </div>
-
-              <div class="portfolio-info mt-5">
-                <h3>Project overview</h3>
-                <ul>
-                  <li><strong>Project type</strong> Bachelor Thesis (Academic Research Project)</li>
-                  <li><strong>Duration</strong> 6 months (Spring - Summer 2022)</li>
-                  <li><strong>Tools</strong> Literature review, user interviews, field observations, low-fidelity
-                    prototyping, usability testing </li>
-                  <li><strong>Category</strong> UX design and Product design</li>
-                  <li><a href="https://essay.utwente.nl/92144/" class="btn-visit align-self-start">See thesis</a></li>
-                </ul>
-              </div>
-            </div>
-
+          <div class="portfolio-info mt-5">
+            <h3>Project overview</h3>
+            <ul>
+              <li><strong>Project type</strong> Smart Environments Course Project (Academic Group Work)</li>
+              <li><strong>Duration</strong> 10 weeks </li>
+              <li><strong>Tools</strong> Arduino, Processing, 3D Modeling Software, Laser Cutter, MDF, PVC</li>
+              <li><strong>Category</strong> Product Design, Physical Prototyping, Smart Environments, IoT</li>
+            </ul>
           </div>
         </div>
 
       </div>
+    </div>
 
-    </section><!-- /Portfolio Details Section -->
+  </div>
+
+</section><!-- /Portfolio Details Section -->
 
   </main>
 
