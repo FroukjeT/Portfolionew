@@ -837,6 +837,7 @@ section,
   .hero {
     text-align: center;
     padding: 60px 0;
+    padding-top: 0px;
   }
 
   .hero .cta-buttons {
@@ -849,6 +850,7 @@ section,
 
   .hero .hero-image {
     margin-top: 3rem;
+    padding-top: 0px;
   }
 }
 
@@ -1409,11 +1411,14 @@ section,
 .testimonials .swiper-button-prev::after,
 .testimonials .swiper-button-next::after {
   font-size: 20px;
+    color: var(--background-color);
   /* color: var(--default-color); */
 }
 
 .testimonials .swiper-button-prev:hover,
 .testimonials .swiper-button-next:hover {
+  background-color: var(--background-color);
+  border-color: var(--background-color);
   /* background-color: var(--accent-color);
   border-color: var(--accent-color); */
 }
@@ -1735,7 +1740,7 @@ section,
 .portfolio-details .portfolio-description .testimonial-item {
   padding: 30px 30px 0 30px;
   position: relative;
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  background: color-mix(in srgb, var(--background-color), transparent 97%);
   margin-bottom: 50px;
 }
 
