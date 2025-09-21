@@ -805,7 +805,7 @@ section,
 
 .hero .hero-image img {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .hero .hero-image .shape-1,
@@ -841,6 +841,7 @@ section,
   border-radius: 24px;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  z-index: 2;
 }
 
 .hero-image-link:hover {
@@ -852,6 +853,7 @@ section,
   position: relative;
   overflow: hidden;
   border-radius: 24px;
+  z-index: 2;
 }
 
 .hero-image-container img,
@@ -1282,6 +1284,7 @@ section,
   overflow: hidden;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .portfolio .portfolio-card:hover {
@@ -1376,6 +1379,10 @@ section,
 }
 
 .portfolio .portfolio-card .portfolio-content h3:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-card:hover .portfolio-content h3 {
   color: var(--accent-color);
 }
 
