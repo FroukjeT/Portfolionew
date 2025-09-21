@@ -88,13 +88,24 @@ function goToPage(event) {
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
- document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
+document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
   downloadBtn.addEventListener('click', function(e) {
     e.preventDefault(); // stop immediate download
-    const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
-    if (allFilter) allFilter.click();
 
-    // Trigger download after a short delay (100ms)
+    const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
+    if (allFilter) {
+      // Remove active class from other filters
+      document.querySelectorAll('.portfolio-filters li.filter-active').forEach(f => f.classList.remove('filter-active'));
+      // Add active class to "All"
+      allFilter.classList.add('filter-active');
+      // Apply Isotope filter
+      const isotopeContainer = document.querySelector('.isotope-container');
+      if (isotopeContainer && isotopeContainer._isotope) {
+        isotopeContainer._isotope.arrange({ filter: '*' });
+      }
+    }
+
+    // Trigger download after tiny delay to allow UI update
     setTimeout(() => {
       const url = downloadBtn.getAttribute('href');
       const tempLink = document.createElement('a');
@@ -103,7 +114,7 @@ function goToPage(event) {
       document.body.appendChild(tempLink);
       tempLink.click();
       document.body.removeChild(tempLink);
-    }, 100);
+    }, 50); // 50ms enough for visual update
   });
 });
   
