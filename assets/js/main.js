@@ -143,7 +143,7 @@ function goToPage(event) {
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+    isotopeItem.querySelectorAll('.isotope-filters li[data-filter]').forEach(function(filters) {
   if (filters.classList.contains('no-filter')) return; // skip the download button
   filters.addEventListener('click', function() {
     isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
