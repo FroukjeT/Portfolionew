@@ -87,44 +87,6 @@ function goToPage(event) {
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
-
-document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
-  downloadBtn.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent immediate download
-
-    // Reset all filters
-    const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
-    if (allFilter) {
-      allFilter.click(); // Simulate click to reset filters
-
-      // Wait for Isotope to finish layout updates
-      const container = document.querySelector('.isotope-container');
-      const observer = new MutationObserver(() => {
-        // Trigger download after filters are reset
-        triggerDownload(downloadBtn);
-        observer.disconnect(); // Stop observing
-      });
-
-      // Observe changes in the Isotope container
-      observer.observe(container, { childList: true, subtree: true });
-    } else {
-      // Fallback if no filter found
-      triggerDownload(downloadBtn);
-    }
-  });
-});
-
-// Function to trigger the download
-function triggerDownload(btn) {
-  const url = btn.getAttribute('href');
-  const tempLink = document.createElement('a');
-  tempLink.href = url;
-  tempLink.download = '';
-  document.body.appendChild(tempLink);
-  tempLink.click();
-  document.body.removeChild(tempLink);
-}
-
   
   /**
    * Animation on scroll function and init
@@ -182,17 +144,19 @@ function triggerDownload(btn) {
     });
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
+  if (filters.classList.contains('no-filter')) return; // skip the download button
+  filters.addEventListener('click', function() {
+    isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+    this.classList.add('filter-active');
+    initIsotope.arrange({
+      filter: this.getAttribute('data-filter')
     });
+    if (typeof aosInit === 'function') {
+      aosInit();
+    }
+  }, false);
+});
+
 
   });
 
