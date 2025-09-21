@@ -88,6 +88,17 @@ function goToPage(event) {
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
+// Reset filters to "All" when download button is clicked
+document.addEventListener('DOMContentLoaded', () => {
+  const downloadBtn = document.getElementById('download-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
+      if (allFilter) allFilter.click(); // Simulate click to reset filter
+    });
+  }
+});
+  
   /**
    * Animation on scroll function and init
    */
