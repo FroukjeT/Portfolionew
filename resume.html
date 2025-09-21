@@ -81,7 +81,7 @@
     </div>
 
     <!-- Resume Section -->
-    <section id="resume" class="resume section" style="padding-bottom: 0px; padding-top: 0px !important;">
+    <section id="resume" class="resume portfolio section" style="padding-bottom: 0px; padding-top: 0px !important;">
 
       <!-- Section Title with Profile Picture -->
       <div class="container section-title" data-aos="fade-up">
@@ -101,14 +101,27 @@
         </div>
       </div>
 
+      
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
-          <div class="col-12">
-            <div class="resume-wrapper">
+        <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
+          <ul class="portfolio-filters isotope-filters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-work">Work Experience</li>
+            <li data-filter=".filter-education">Education</li>
+            <li data-filter=".filter-skills">Skills</li>
+            <li data-filter=".filter-languages">Languages</li>
+            <li data-filter=".filter-competencies">Competencies</li>
+          </ul>
+        </div>
 
-              <!-- Work Experience -->
-              <div class="resume-block" data-aos="fade-up">
+        <!-- Work Experience -->
+        <section id="work" class="resume section filter-work isotope-item" style="padding-bottom: 0px; padding-top: 0px !important;">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <div class="col-12">
+                <div class="resume-wrapper">
                 <h2>Work Experience</h2>
+                <p class="lead" style="margin-bottom: 20px !important;">Professional experience in UX design, user research, and project management across diverse industries.</p>
 
                 <div class="timeline">
                   <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
@@ -172,93 +185,87 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <!-- Education -->
-              <div class="resume-block" data-aos="fade-up" data-aos-delay="100">
-                <h2>My Education</h2>
+    <!-- Education Section -->
+    <section id="education" class="resume section filter-education isotope-item" style="padding-bottom: 0px; padding-top: 0px !important;">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-12">
+            <div class="resume-wrapper">
+              <h2>My Education</h2>
+              <p class="lead" style="margin-bottom: 20px !important;">Academic journey focused on Human-Computer Interaction, Creative Technology, and international learning experiences.</p>
 
-                <div class="timeline">
-                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-left">
-                      <h4 class="company">Aalto University, Finland</h4>
-                      <span class="period">2025 – 2026 (expected)</span>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-right">
-                      <h3 class="position">Exit, double degree Master in Human-Computer Interaction and Design (HCID)
-                      </h3>
-                      <p class="description">Master of Science (with specialization Cross Device Interaction) at Aalto
-                        University Finland.</p>
-                    </div>
+              <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="timeline-left">
+                    <h4 class="company">Aalto University, Finland</h4>
+                    <span class="period">2025 – 2026 (expected)</span>
                   </div>
-
-                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-left">
-                      <h4 class="company">Universidad Politecnica de Madrid, Spain</h4>
-                      <span class="period">2024 – 2025 </span>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-right">
-                      <h3 class="position">Entry, double degree Master in Human-Computer Interaction and Design (HCID)
-                      </h3>
-                      <p class="description">Master of digital innovation (with specialization accessibility) at
-                        Universidad Politecnica de Madrid</p>
-                    </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Exit, double degree Master in Human-Computer Interaction and Design (HCID)
+                    </h3>
+                    <p class="description">Master of Science (with specialization Cross Device Interaction) at Aalto
+                      University Finland.</p>
                   </div>
+                </div>
 
-                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-left">
-                      <h4 class="company">University of Twente, The Netherlands</h4>
-                      <span class="period">2019 – 2022</span>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-right">
-                      <h3 class="position">Bachelor’s in Creative Technology</h3>
-                      <p class="description">Graduated with distinction. Specialized in Smart Technology and interaction
-                        design.</p>
-                    </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="timeline-left">
+                    <h4 class="company">Universidad Politecnica de Madrid, Spain</h4>
+                    <span class="period">2024 – 2025 </span>
                   </div>
-
-                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="timeline-left">
-                      <h4 class="company">Umeå University, Sweden</h4>
-                      <span class="period">2020 - 2021</span>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-right">
-                      <h3 class="position">Erasmus Exchange</h3>
-                      <p class="description">Courses in health psychology, cognitive psychology, and interaction
-                        technology.</p>
-                    </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Entry, double degree Master in Human-Computer Interaction and Design (HCID)
+                    </h3>
+                    <p class="description">Master of digital innovation (with specialization accessibility) at
+                      Universidad Politecnica de Madrid</p>
                   </div>
+                </div>
 
-                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="timeline-left">
-                      <h4 class="company">Hants East Rual High school, Canada</h4>
-                      <span class="period">2017 – 2019</span>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-right">
-                      <h3 class="position">Gap Year Program</h3>
-                      <p class="description">Studied tourism, sociology, and electronics. Enhancing English language
-                        proficiency and soft skills during educational exchange year.</p>
-                    </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="timeline-left">
+                    <h4 class="company">University of Twente, The Netherlands</h4>
+                    <span class="period">2019 – 2022</span>
                   </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Bachelor's in Creative Technology</h3>
+                    <p class="description">Graduated with distinction. Specialized in Smart Technology and interaction
+                      design.</p>
+                  </div>
+                </div>
 
-                    <!-- <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="timeline-left">
-                      <h4 class="company">Onze Lieve Vrouwelyceym Breda, Netherlands</h4>
-                      <span class="period">2012 – 2018</span>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-right">
-                      <h3 class="position">High School</h3>
-                      <p class="description">Graduated with honours in a double degree program of nature & science and nature & health.</p>
-                    </div>
-                  </div> -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                  <div class="timeline-left">
+                    <h4 class="company">Umeå University, Sweden</h4>
+                    <span class="period">2020 - 2021</span>
+                  </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Erasmus Exchange</h3>
+                    <p class="description">Courses in health psychology, cognitive psychology, and interaction
+                      technology.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                  <div class="timeline-left">
+                    <h4 class="company">Hants East Rual High school, Canada</h4>
+                    <span class="period">2017 – 2019</span>
+                  </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Gap Year Program</h3>
+                    <p class="description">Studied tourism, sociology, and electronics. Enhancing English language
+                      proficiency and soft skills during educational exchange year.</p>
+                  </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -267,14 +274,12 @@
     <br>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section" style="margin-bottom: 0px !important; padding-bottom: 0px !important;">
+    <section id="skills" class="skills section filter-skills isotope-item" style="margin-bottom: 0px !important; padding-bottom: 0px !important;">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>My Skills</h2>
+        <p class="lead" style="margin-bottom: 20px !important;">A combination of technical skills, creativity, and
+          user-centered thinking.</p>
         <div class="row g-4 skills-animation">
-
-          <h2>My Skills</h2>
-          <p class="lead" style="margin-bottom: 0px !important;">A combination of technical skills, creativity, and
-            user-centered thinking.</p>
-
 
           <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="skill-box">
@@ -355,10 +360,11 @@
     </section>
 
     <!-- Languages Section -->
-    <section id="languages" class="skills section" style="margin-bottom: 0px; margin-top: 0px !important;">
+    <section id="languages" class="skills section filter-languages isotope-item" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px!important;">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <h2>My Languages</h2><br>
+        <h2>My Languages</h2>
+        <p class="lead" style="margin-bottom: 20px !important;">Multilingual communication skills developed through international education and work experiences.</p>
 
         <!-- Language Cards -->
         <div class="row g-4">
@@ -400,12 +406,11 @@
     </section>
 
     <!-- competencies Section -->
-    <section id="skills" class="skills section" style="margin-bottom: 0px !important; padding-bottom: 0px !important;">
+    <section id="competencies" class="skills section filter-competencies isotope-item" style="margin-bottom: 0px !important; padding-bottom: 0px !important;">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>My Competencies</h2>
+        <p class="lead" style="margin-bottom: 20px !important;">Personal strengths and soft skills that drive success in collaborative and challenging environments.</p>
         <div class="row g-4 skills-animation">
-
-          <h2>My Competencies</h2>
-
 
           <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="skill-box">
@@ -460,7 +465,7 @@
       </div>
     </section>
 
- <div class="hero section content row align-items-center">
+ <div class="hero section content row align-items-center pdf-download-section">
   <div class="col-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
     <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
       <a href="Froukje_Temme_CV.pdf" class="btn btn-primary btn-lg" download>
@@ -509,6 +514,203 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom Resume Filtering Script with Animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all filter buttons and resume sections
+      const filterButtons = document.querySelectorAll('.portfolio-filters li');
+      const resumeSections = document.querySelectorAll('.isotope-item');
+      
+      // Add CSS for smooth animations
+      const style = document.createElement('style');
+      style.textContent = `
+        .resume-section-hidden {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          pointer-events: none;
+          max-height: 0;
+          overflow: hidden;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .resume-section-visible {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          pointer-events: auto;
+          max-height: none;
+          overflow: visible;
+        }
+        
+        .resume-section-fade-out {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Ensure PDF button section is always visible */
+        .pdf-download-section {
+          display: block !important;
+          opacity: 1 !important;
+          transform: none !important;
+          visibility: visible !important;
+        }
+        
+        /* Remove bottom padding from resume section title */
+        .resume .section-title {
+          padding-bottom: 0 !important;
+        }
+        
+        /* Add spacing between work experience and education */
+        #work {
+          margin-bottom: 4rem !important;
+        }
+        
+        /* Make skills, languages, and competencies sections consistent with work/education spacing */
+        .skills.section.filter-skills,
+        .skills.section.filter-languages,
+        .skills.section.filter-competencies {
+          padding-top: 0 !important;
+        }
+        
+        /* Add consistent top margin to skills sections when they're the first visible section */
+        .skills.section.filter-skills:first-of-type,
+        .skills.section.filter-languages:first-of-type,
+        .skills.section.filter-competencies:first-of-type {
+          margin-top: 2rem !important;
+        }
+        
+        /* Add consistent spacing between all sections - override inline styles */
+        #education {
+          margin-bottom: 4rem !important;
+        }
+        
+        #skills[style*="margin-bottom: 0px"] {
+          margin-bottom: 4rem !important;
+        }
+        
+        #languages[style*="margin-bottom: 0px"] {
+          margin-bottom: 4rem !important;
+        }
+        
+        #competencies[style*="margin-bottom: 0px"] {
+          margin-bottom: 4rem !important;
+        }
+        
+        /* Alternative approach - target the section elements directly */
+        section#skills,
+        section#languages,
+        section#competencies {
+          margin-bottom: 4rem !important;
+        }
+      `;
+      document.head.appendChild(style);
+      
+      // Add click event listeners to filter buttons
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Store current scroll position
+          const currentScrollY = window.scrollY;
+          
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+          // Add active class to clicked button
+          this.classList.add('filter-active');
+          
+          // Get the filter value
+          const filterValue = this.getAttribute('data-filter');
+          
+          // First, fade out all sections
+          resumeSections.forEach(section => {
+            section.classList.add('resume-section-fade-out');
+            section.classList.remove('resume-section-visible');
+          });
+          
+          // After fade out, show/hide sections and fade in visible ones
+          setTimeout(() => {
+            resumeSections.forEach(section => {
+              section.classList.remove('resume-section-fade-out');
+              
+              // Check if this section should be visible
+              const shouldShow = filterValue === '*' || section.classList.contains(filterValue.replace('.', ''));
+              
+              if (shouldShow) {
+                section.style.display = 'block';
+                section.style.visibility = 'visible';
+                section.classList.add('resume-section-visible');
+                section.classList.remove('resume-section-hidden');
+              } else {
+                section.classList.add('resume-section-hidden');
+                section.classList.remove('resume-section-visible');
+                // Hide after animation completes
+                setTimeout(() => {
+                  if (section.classList.contains('resume-section-hidden')) {
+                    section.style.display = 'none';
+                    section.style.visibility = 'hidden';
+                  }
+                }, 500);
+              }
+            });
+            
+            // Maintain scroll position throughout the animation
+            const maintainScroll = () => {
+              window.scrollTo(0, currentScrollY);
+            };
+            
+            // Keep scroll position fixed during animations
+            const scrollInterval = setInterval(maintainScroll, 10);
+            
+            // Stop maintaining scroll after animations complete
+            setTimeout(() => {
+              clearInterval(scrollInterval);
+            }, 1000);
+            
+            // Trigger AOS animation for visible sections
+            if (typeof AOS !== 'undefined') {
+              setTimeout(() => {
+                AOS.refresh();
+              }, 200);
+            }
+            
+            // Re-initialize skills animation for visible sections
+            setTimeout(() => {
+              const visibleSkillsSections = document.querySelectorAll('.skills-animation:not(.resume-section-hidden)');
+              visibleSkillsSections.forEach((item) => {
+                // Re-trigger the waypoint animation
+                const progress = item.querySelectorAll('.progress .progress-bar');
+                progress.forEach(el => {
+                  el.style.width = el.getAttribute('aria-valuenow') + '%';
+                });
+              });
+            }, 600);
+          }, 400);
+        });
+      });
+      
+      // Initialize all sections as visible on page load
+      resumeSections.forEach(section => {
+        section.classList.add('resume-section-visible');
+      });
+      
+      // Override inline styles to add consistent spacing
+      const skillsSection = document.getElementById('skills');
+      const languagesSection = document.getElementById('languages');
+      const competenciesSection = document.getElementById('competencies');
+      
+      if (skillsSection) {
+        skillsSection.style.setProperty('margin-bottom', '4rem', 'important');
+      }
+      if (languagesSection) {
+        languagesSection.style.setProperty('margin-bottom', '4rem', 'important');
+      }
+      if (competenciesSection) {
+        competenciesSection.style.setProperty('margin-bottom', '4rem', 'important');
+      }
+    });
+  </script>
 
 </body>
 
