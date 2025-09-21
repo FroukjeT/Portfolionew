@@ -90,23 +90,23 @@ function goToPage(event) {
 
 document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
   downloadBtn.addEventListener('click', function(e) {
-    e.preventDefault(); // Stop immediate download
+    e.preventDefault(); // Prevent immediate download
 
-    // Reset filters
+    // Reset all filters
     const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
     if (allFilter) {
-      // Listen for the transition (or layout change) to complete
+      allFilter.click(); // Simulate click to reset filters
+
+      // Wait for Isotope to finish layout updates
       const container = document.querySelector('.isotope-container');
       const observer = new MutationObserver(() => {
-        // Once the layout changes, trigger the download
+        // Trigger download after filters are reset
         triggerDownload(downloadBtn);
         observer.disconnect(); // Stop observing
       });
 
-      // Start observing child list changes (Isotope will update the DOM)
+      // Observe changes in the Isotope container
       observer.observe(container, { childList: true, subtree: true });
-
-      allFilter.click(); // Simulate filter reset
     } else {
       // Fallback if no filter found
       triggerDownload(downloadBtn);
@@ -114,7 +114,7 @@ document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
   });
 });
 
-// Function to trigger download
+// Function to trigger the download
 function triggerDownload(btn) {
   const url = btn.getAttribute('href');
   const tempLink = document.createElement('a');
@@ -124,6 +124,7 @@ function triggerDownload(btn) {
   tempLink.click();
   document.body.removeChild(tempLink);
 }
+
   
   /**
    * Animation on scroll function and init
