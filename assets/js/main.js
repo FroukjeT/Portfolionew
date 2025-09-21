@@ -88,13 +88,24 @@ function goToPage(event) {
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  // Reset filters to "All" when download icon is clicked
-  document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
-    downloadBtn.addEventListener('click', () => {
-      const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
-      if (allFilter) allFilter.click();
-    });
+ document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
+  downloadBtn.addEventListener('click', function(e) {
+    e.preventDefault(); // stop immediate download
+    const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
+    if (allFilter) allFilter.click();
+
+    // Trigger download after a short delay (100ms)
+    setTimeout(() => {
+      const url = downloadBtn.getAttribute('href');
+      const tempLink = document.createElement('a');
+      tempLink.href = url;
+      tempLink.download = '';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    }, 100);
   });
+});
   
   /**
    * Animation on scroll function and init
