@@ -102,17 +102,22 @@
       </div>
 
       
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
-          <ul class="portfolio-filters isotope-filters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-work">Work Experience</li>
-            <li data-filter=".filter-education">Education</li>
-            <li data-filter=".filter-skills">Skills</li>
-            <li data-filter=".filter-languages">Languages</li>
-            <li data-filter=".filter-competencies">Competencies</li>
-          </ul>
-        </div>
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
+    <ul class="portfolio-filters isotope-filters">
+      <li data-filter="*" class="filter-active">All</li>
+      <li data-filter=".filter-work">Work Experience</li>
+      <li data-filter=".filter-education">Education</li>
+      <li data-filter=".filter-skills">Skills</li>
+      <li data-filter=".filter-languages">Languages</li>
+      <li data-filter=".filter-competencies">Competencies</li>
+      <li class="download-icon">
+        <a href="Froukje_Temme_CV.pdf" download><i class="bi bi-download"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
         <!-- Work Experience -->
         <section id="work" class="resume section filter-work isotope-item" style="padding-bottom: 0px; padding-top: 0px !important;">
@@ -360,7 +365,7 @@
     </section>
 
     <!-- Languages Section -->
-    <section id="languages" class="skills section filter-languages isotope-item" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px!important;">
+    <section id="languages" class="skills section filter-languages isotope-item" style="margin-bottom: 0px; margin-top: 0px !important;">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <h2>My Languages</h2>
@@ -408,9 +413,10 @@
     <!-- competencies Section -->
     <section id="competencies" class="skills section filter-competencies isotope-item" style="margin-bottom: 0px !important; padding-bottom: 0px !important;">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>My Competencies</h2>
-        <p class="lead" style="margin-bottom: 20px !important;">Personal strengths and soft skills that drive success in collaborative and challenging environments.</p>
         <div class="row g-4 skills-animation">
+
+          <h2>My Competencies</h2>
+          <p class="lead" style="margin-bottom: 20px !important;">Personal strengths and soft skills that drive success in collaborative and challenging environments.</p>
 
           <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="skill-box">
@@ -527,8 +533,8 @@
       style.textContent = `
         .resume-section-hidden {
           opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: translateY(30px);
+          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
           pointer-events: none;
           max-height: 0;
           overflow: hidden;
@@ -539,7 +545,7 @@
         .resume-section-visible {
           opacity: 1;
           transform: translateY(0);
-          transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
           pointer-events: auto;
           max-height: none;
           overflow: visible;
@@ -547,8 +553,8 @@
         
         .resume-section-fade-out {
           opacity: 0;
-          transform: translateY(-10px);
-          transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: translateY(-20px);
+          transition: opacity 0.3s ease-in, transform 0.3s ease-in;
         }
         
         /* Ensure PDF button section is always visible */
@@ -651,28 +657,20 @@
                     section.style.display = 'none';
                     section.style.visibility = 'hidden';
                   }
-                }, 500);
+                }, 400);
               }
             });
             
-            // Maintain scroll position throughout the animation
-            const maintainScroll = () => {
-              window.scrollTo(0, currentScrollY);
-            };
-            
-            // Keep scroll position fixed during animations
-            const scrollInterval = setInterval(maintainScroll, 10);
-            
-            // Stop maintaining scroll after animations complete
-            setTimeout(() => {
-              clearInterval(scrollInterval);
-            }, 1000);
+            // Maintain scroll position to prevent jumping
+            window.scrollTo(0, currentScrollY);
             
             // Trigger AOS animation for visible sections
             if (typeof AOS !== 'undefined') {
               setTimeout(() => {
                 AOS.refresh();
-              }, 200);
+                // Ensure scroll position is maintained after AOS refresh
+                window.scrollTo(0, currentScrollY);
+              }, 100);
             }
             
             // Re-initialize skills animation for visible sections
@@ -685,8 +683,8 @@
                   el.style.width = el.getAttribute('aria-valuenow') + '%';
                 });
               });
-            }, 600);
-          }, 400);
+            }, 500);
+          }, 300);
         });
       });
       
