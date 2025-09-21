@@ -90,33 +90,40 @@ function goToPage(event) {
 
 document.querySelectorAll('.download-icon a').forEach(downloadBtn => {
   downloadBtn.addEventListener('click', function(e) {
-    e.preventDefault(); // stop immediate download
+    e.preventDefault(); // Stop immediate download
 
+    // Reset filters
     const allFilter = document.querySelector('.portfolio-filters li[data-filter="*"]');
     if (allFilter) {
-      // Remove active class from other filters
-      document.querySelectorAll('.portfolio-filters li.filter-active').forEach(f => f.classList.remove('filter-active'));
-      // Add active class to "All"
-      allFilter.classList.add('filter-active');
-      // Apply Isotope filter
-      const isotopeContainer = document.querySelector('.isotope-container');
-      if (isotopeContainer && isotopeContainer._isotope) {
-        isotopeContainer._isotope.arrange({ filter: '*' });
-      }
-    }
+      // Listen for the transition (or layout change) to complete
+      const container = document.querySelector('.isotope-container');
+      const observer = new MutationObserver(() => {
+        // Once the layout changes, trigger the download
+        triggerDownload(downloadBtn);
+        observer.disconnect(); // Stop observing
+      });
 
-    // Trigger download after tiny delay to allow UI update
-    setTimeout(() => {
-      const url = downloadBtn.getAttribute('href');
-      const tempLink = document.createElement('a');
-      tempLink.href = url;
-      tempLink.download = '';
-      document.body.appendChild(tempLink);
-      tempLink.click();
-      document.body.removeChild(tempLink);
-    }, 50); // 50ms enough for visual update
+      // Start observing child list changes (Isotope will update the DOM)
+      observer.observe(container, { childList: true, subtree: true });
+
+      allFilter.click(); // Simulate filter reset
+    } else {
+      // Fallback if no filter found
+      triggerDownload(downloadBtn);
+    }
   });
 });
+
+// Function to trigger download
+function triggerDownload(btn) {
+  const url = btn.getAttribute('href');
+  const tempLink = document.createElement('a');
+  tempLink.href = url;
+  tempLink.download = '';
+  document.body.appendChild(tempLink);
+  tempLink.click();
+  document.body.removeChild(tempLink);
+}
   
   /**
    * Animation on scroll function and init
