@@ -551,6 +551,14 @@ h6 {
   padding: 20px 0;
 }
 
+/* Ensure comfortable side padding on small screens for breadcrumb/title */
+@media (max-width: 576px) {
+  .page-title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 .page-title .breadcrumbs {
   margin-bottom: 1.5rem;
 }
@@ -705,6 +713,12 @@ section,
   padding: 120px 0;
   position: relative;
   overflow: hidden;
+}
+
+/* Override for the resume's lower PDF download section to remove extra spacing */
+.hero.pdf-download-section {
+  padding: 0 !important;
+  padding-bottom: 120 !important;
 }
 
 .hero .content h2 {
