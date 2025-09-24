@@ -37,6 +37,7 @@
   --nav-dropdown-hover-color: #8b432b; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
+
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -359,6 +360,11 @@ h6 {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
+  /* Make each mobile menu item span full width */
+  .navmenu ul li {
+    width: 100%;
+  }
+
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
@@ -371,6 +377,7 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    width: 100%;
   }
 
   .navmenu a i,
@@ -405,6 +412,14 @@ h6 {
     background-color: var(--accent-color);
     color: var(--contrast-color);
     transform: rotate(180deg);
+  }
+
+  /* Mobile nav item hover/tap background (not persistent for .active links) */
+  .navmenu a:hover,
+  .navmenu a:focus,
+  .navmenu a:active {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+    border-radius: 6px;
   }
 
   .navmenu .dropdown ul {
