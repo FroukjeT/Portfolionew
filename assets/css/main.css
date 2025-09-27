@@ -2171,6 +2171,10 @@ section,
   align-items: center;
 }
 
+.extra-bold {
+    font-weight: 600;
+}
+
 
 /*--------------------------------------------------------------
 # Starter Section Section
